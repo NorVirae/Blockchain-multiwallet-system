@@ -26,14 +26,13 @@ function App() {
 
 
   const connectAccount = async  () => {
-    console.log("clicked")
     const provider = await web3modal.connect()
     const result = await web3modal.toggleModal()
     console.log(provider, result)
   }
   
   const connectNormalAccount = async () => {
-    const newWeb3 =  new Web3()
+    const newWeb3 =  new Web3(provider)
     const accounts = await newWeb3.eth.getAccounts()
     console.log(accounts)
   }
@@ -44,7 +43,7 @@ function App() {
       <button className="btn">Sign in using metamask</button>
       <button
         className="btn"
-         onClick={() => connectAccount()}
+        //  onClick={() => connectWallet()}
       >
         Sign in using wallet connect
       </button>

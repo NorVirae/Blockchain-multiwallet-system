@@ -18,33 +18,13 @@ function App() {
     }
   }
 
-  const web3modal = new Web3Modal ({
-    network:"mainnet",
-    cacheProvider:true,
-    providerOptions
-  })
-
-
-  const connectAccount = async  () => {
-    console.log("clicked")
-    const provider = await web3modal.connect()
-    const result = await web3modal.toggleModal()
-    console.log(provider, result)
-  }
-  
-  const connectNormalAccount = async () => {
-    const newWeb3 =  new Web3()
-    const accounts = await newWeb3.eth.getAccounts()
-    console.log(accounts)
-  }
-  
-
+  const Web3modal
   return (
     <main>
       <button className="btn">Sign in using metamask</button>
       <button
         className="btn"
-         onClick={() => connectAccount()}
+        //  onClick={() => connectWallet()}
       >
         Sign in using wallet connect
       </button>

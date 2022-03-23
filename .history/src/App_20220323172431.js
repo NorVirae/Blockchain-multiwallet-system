@@ -26,7 +26,7 @@ function App() {
 
 
   const connectAccount = async  () => {
-    console.log("clicked")
+    c
     const provider = await web3modal.connect()
     const result = await web3modal.toggleModal()
     console.log(provider, result)
